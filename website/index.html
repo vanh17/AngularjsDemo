@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="newswebsite">
+<head>
+    <meta content="text/html; charset=UTF-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <sciprt src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></sciprt>
+    <script type="text/javascript">
+    var app = angular.module('newswebsite', ['ngRoute']);
+    app.controller(
+      'WebCtl', 
+      [
+         '$scope', 
+         '$log', 
+         function ($scope, $log) {
+                // $scope.handleMyButton = function() {
+                //   $log.log('Angular link clicked!');
+                // }
+         }
+      ]
+      );
+    function specifyRoutes($routeProvider) {
+      $routeProvider
+         .when('/', {templateUrl: 'home_index.html', controller: 'WebCtl'})
+         .when('/article1', {templateUrl: 'article1.html', controller: 'WebCtl'})
+         .when('/article2', {templateUrl: 'article2.html', controller: 'WebCtl'})
+         .when('/article3', {templateUrl: 'article3.html', controller: 'WebCtl'})
+         .when('/article4', {templateUrl: 'article4.html', controller: 'WebCtl'})
+         .when('/article5', {templateUrl: 'article5.html', controller: 'WebCtl'})
+         .when('/article6', {templateUrl: 'article6.html', controller: 'WebCtl'})
+         .when('/article7', {templateUrl: 'article7.html', controller: 'WebCtl'})
+         .when('/article8', {templateUrl: 'article8.html', controller: 'WebCtl'})
+         .when('/article9', {templateUrl: 'article9.html', controller: 'WebCtl'})
+         .when('/article10', {templateUrl: 'article10.html', controller: 'WebCtl'});
+    }
+    app.config(specifyRoutes);
+    </script>
+</head>
+<body ng-controller="WebCtl">
+    <li><a id="workBtn" href="#/">Articles</a></li>
+    <ol>
+    <li><a href="#/article1">What D.C. Republicans will do if it’s Trump vs. Cruz</a></li><br>
+    <li><a href="#/article2">Financial Market Today</a></li><br>
+    <li><a href="#/article3">Several states are trying to outlaw a taboo marriage practice</a></li><br>
+    <li><a href="#/article4">39 of the most hilariously bad texts people have sent their exes</a></li><br>
+    <li><a href="#/article5">Citigroup has set up a new group to cater to the richest investors in the world</a></li><br>
+    <li><a href="#/article6">Gorgeous color photos from the Great Depression show life in one of America's darkest times</a></li><br>
+    <li><a href="#/article7">New polls show Donald Trump in prime position to sweep up the next 2 key states</a></li><br>
+    <li><a href="#/article8">Hillary Clinton shouldn't panic after her stunning Michigan loss — but here's what she should worry about</a></li><br>
+    <li><a href="#/article9">These 2 charts show why the shipping industry might be screwed</a></li><br>
+    <li><a href="#/article10">WeWork is now a $16 billion company</a></li><br>
+    </ol>
+<!-- main content -->
+<div >
+    <div ng-view></div>
+</div>
+</body>
+</html>
